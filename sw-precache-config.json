@@ -1,0 +1,31 @@
+{
+  "navigateFallback": "/",
+  "root": "public/js/",
+  "staticFileGlobs": [
+    "public/assets/**.*",
+    "public/js/index.js",
+    "public/manifest.webmanifest"
+  ],
+  "runtimeCaching": [
+    {
+      "urlPattern": "/shadow-v0.js",
+      "handler": "cacheFirst",
+      "options": {
+        "origin": "https://cdn.ampproject.org"
+      }
+    },
+    {
+      "urlPattern": "/documents",
+      "handler": "networkFirst"
+    },
+    {
+      "urlPattern": "/content/*",
+      "handler": "fastest",
+      "options": {
+        "cache": {
+          "maxEntries": 10
+        }
+      }
+    }
+  ]
+}

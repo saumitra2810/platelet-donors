@@ -11,7 +11,7 @@ var mustacheExpress = require('mustache-express');
 var app = express();
 
 // Register '.mustache' extension with The Mustache Express
-app.engine('mustache', mustacheExpress());
+app.engine('mustache', mustacheExpress('views/partials', '.mustache'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
